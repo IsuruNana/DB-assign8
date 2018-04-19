@@ -27,7 +27,7 @@
                     <a class="nav-link" href="index.html">Show Tables</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Query Tables</a>
+                    <a class="nav-link" href="query_tables.html">Query Tables</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="input_supplier.html">Insert Supplier</a>
@@ -58,31 +58,24 @@
             <form action="index.php" method="post">
                 <div class="form-check form-check-inline">
                     <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> Customer
+                        <input class="form-check-input" type="radio" name="selectTable" id="inlineRadio1" value="customer"> Customers
                     </label>
                     </div>
                     <div class="form-check form-check-inline">
                     <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> Items
+                        <input class="form-check-input" type="radio" name="selectTable" id="inlineRadio2" value="items"> Items
                     </label>
                     </div>
                     <div class="form-check form-check-inline disabled">
                     <label class="form-check-label">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">Orders
+                        <input class="form-check-input" type="radio" name="selectTable" id="inlineRadio3" value="orders">Orders
                     </label>
-                    <input class= "btn btn-success ml-3" type="submit" name="submit" value="Get Table" />
                 </div>
+                <input class= "btn btn-success ml-3" type="submit" name="submit" value="Get Table" />
             </form>
         </div>
-        <?php
-            if(isset($_POST['submit'])){
-            $selected_val = $_POST['Color'];  // Storing Selected Value In Variable
-            echo "You have selected :" .$selected_val;  // Displaying Selected Value
-            }
-        ?>
 
         
-
         <table class="table mt-5">
             <thead class="thead-dark">
                 <tr>
