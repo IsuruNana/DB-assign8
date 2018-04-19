@@ -3,6 +3,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
     <?php
@@ -18,14 +21,7 @@
 
         $radioVal = $_POST["selectTable"];
 
-        // if($radioVal == "customer") {
-        //     echo("You chose the first button. Good choice. :D");
-        // }
-        // else if ($radioVal == "items") {
-        //     echo("Second, eh?");
-        // }
-
-        $query = "Select * from " . $radioval;
+        $query = "Select * from {$radioVal}" ;
         $result = mysqli_query($link, $query);
 
         //Comment
@@ -34,12 +30,58 @@
         }
 
         else {
-            // process results using cursor
-            while ($row = mysqli_fetch_array($result)) {
-                echo "<hr>";  //horizontal line
-                echo "id: ". $row["customerID"] . "<br />";
-                echo "name: " . $row["Name"] .  "<br />";
-            }
+            // echo '<div class="container mt-5">';
+            //     echo "<h1>Showing {$radioVal} table</h1>";
+            //     while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+            //         //Print table heads
+            //             echo '<table class="table">';
+            //                 echo "<tr>";//table row
+            //                     for($i = 0; $i < sizeof($row); $i++){
+            //                         $finfo = mysqli_fetch_field_direct($result, $i);
+            //                         echo "<th>" . $finfo->name . "</th>";//table header
+            //                     }
+            //                 echo "</tr>";//table row
+                            
+            //                 //Print rows
+            //                 echo "<tr>";//table row
+            //                     for($i = 0; $i < sizeof($row); $i++){
+            //                         echo "<td>" . $row[$i] . "</td>";//table data
+            //                     }
+            //                 echo "</tr>";//table row
+            //             echo '</table>';
+            //     }
+            // echo '</div>';
+
+            echo '<div class="container mt-5">';
+                echo "<h1>Showing {$radioVal} table</h1>";
+                $row = mysqli_fetch_array($result, MYSQLI_NUM);
+                echo '<table class="table">';
+                    echo '<thead class="thead-dark">';
+                        echo '<tr>';//table row
+                            for($i = 0; $i < sizeof($row); $i++){
+                                $finfo = mysqli_fetch_field_direct($result, $i);
+                                echo '<th scope="col">' . $finfo->name . '</th>';//table header
+                            }
+                    echo '</thead>';
+                    //Print row
+                    //---------------------------------------------------//
+                    echo "<tr>";//table row
+                    for($i = 0; $i < sizeof($row); $i++){
+                        echo "<td>" . $row[$i] . "</td>";//table data
+                    }
+                    echo "</tr>";//table row
+                    //---------------------------------------------------//
+                    while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+                        //Print rows
+                        echo "<tr>";//table row
+                            for($i = 0; $i < sizeof($row); $i++){
+                                echo "<td>" . $row[$i] . "</td>";//table data
+                            }
+                        echo "</tr>";//table row
+                
+                    }
+                echo '</table>';
+            echo '</div>';
         }
         
         mysqli_free_result ($result);
