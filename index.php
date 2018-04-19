@@ -17,6 +17,7 @@
         $query = "Select * from customer";
         $result = mysqli_query($link, $query);
 
+        //Comment
         if (!$result) {
             die( 'Error in SQL: ' . mysqli_error($link));
         }
