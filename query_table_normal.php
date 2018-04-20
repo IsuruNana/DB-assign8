@@ -16,18 +16,6 @@
         mysqli_select_db($link, 'smmitchell2') or die ('Could not select database');
 
         //---------------End Setup----------------//
-
-        // $tableVal = $_POST["table"];
-        // $whereVal = $_POST["where"];
-
-        // if ($tableVal == "table[0]"){
-        //     $query = "Select customerID from customer join orders on customerID=custID";
-        //     $result = mysqli_query($link, $query);
-        // }
-        // elseif($tableVal == "table[1]"){
-
-        // }
-
         $radioVal = $_POST["selectTable"];
         $textVal = $_POST["inputForm"];
 

@@ -26,8 +26,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="index.html">Show Tables</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="query_table_join.html">Query Table Join</a>
+                </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="query_tables.html">Query Tables</a>
+                    <a class="nav-link" href="query_table_normal.html">Query Table Normal</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="input_supplier.html">Insert Supplier</a>
@@ -38,25 +41,8 @@
             </ul>
         </div>
     </nav>
-        <div class="container mt-5">
-            <p class="display-4">Query 1: (Join)</p>
-            <hr>
-            <form action="query_tables.php">
-                <select name="table">
-                    <option value="items">Show Items with customers who ordered item</option>
-                    <option value="supplier">Supplier</option>
-                </select>
-                <select name="where">
-                    <option value="greaterID">Supplier ID is greater than 3000</option>
-                    <option value="lessID">Supplier ID is less than 3000</option>
-                    <option value="allID">Shows all Suppliers</option>
-                </select>
-                <br>
-                <br>
-                <input type="submit" class="btn btn-success">
-            </form>
-            <hr>
-            <p class="display-4 mt-3">Query 2: Item Table</p>
+    <div class="container mt-5">
+            <p class="display-4">Query Normal</p>
             <hr>
             <form action="query_tables.php" method="post">
                 <div>
