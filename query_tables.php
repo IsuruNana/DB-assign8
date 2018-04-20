@@ -17,16 +17,20 @@
 
         //---------------End Setup----------------//
 
-        $tableVal = $_POST["table"];
-        $whereVal = $_POST["where"];
+        // $tableVal = $_POST["table"];
+        // $whereVal = $_POST["where"];
 
-        if ($tableVal == "table[0"){
-            $query = "Select customerID from customer join orders on customerID=custID";
-            $result = mysqli_query($link, $query);
-        }
-        elseif($tableVal == "table[1]"){
+        // if ($tableVal == "table[0"){
+        //     $query = "Select customerID from customer join orders on customerID=custID";
+        //     $result = mysqli_query($link, $query);
+        // }
+        // elseif($tableVal == "table[1]"){
 
-        }
+        // }
+
+        $tableVal = $_POST["selectTable"];
+        // $whereVal = $_POST["where"];
+
         
         mysqli_close($link);   // disconnecting from MySQL
         

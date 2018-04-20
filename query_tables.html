@@ -39,7 +39,7 @@
         </div>
     </nav>
         <div class="container mt-5">
-            <p class="display-4">Query 1:</p>
+            <p class="display-4">Query 1: (Join)</p>
             <hr>
             <form action="/query_tables.php">
                 <select name="table">
@@ -56,20 +56,25 @@
                 <input type="submit" class="btn btn-success">
             </form>
             <hr>
-            <p class="display-4 mt-3">Query 2:</p>
+            <p class="display-4 mt-3">Query 2: Item Table</p>
             <hr>
-            <form action="/query_tables.php">
-                <select name="table">
-                    <option value="items">Show Items with customers who ordered item</option>
-                    <option value="supplier">Supplier</option>
-                </select>
-                <select name="where">
-                    <option value="greaterID">Supplier ID is greater than 3000</option>
-                    <option value="lessID">Supplier ID is less than 3000</option>
-                    <option value="allID">Shows all Suppliers</option>
-                </select>
-                <br>
-                <br>
+            <form action="/query_tables.php" method="post">
+                <div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="selectTable" id="inlineRadio1" value="lessThan"> itemID less than
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="selectTable" id="inlineRadio2" value="greaterThan"> itemID greater than
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="text" name="inputForm" />
+                        </label>
+                    </div>
                 <input type="submit" class="btn btn-success">
             </form>
         </div>
