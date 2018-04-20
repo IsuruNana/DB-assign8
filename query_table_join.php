@@ -17,18 +17,22 @@
 
         //---------------End Setup----------------//
 
-        $tableVal = $_POST["table"];
+        
         $whereVal = $_POST["where"];
         echo $tableVal;
         echo $whereVal;
-        if ($tableVal == "table[0]"){
+        if ($tableVal == "where[0]"){
+            $query = "Select customerID from customer join orders on customerID=custID where customerID>3000";
+            $result = mysqli_query($link, $query);
+        }
+        elseif($tableVal == "where[1]"){
+            $query = "Select customerID from customer join orders on customerID=custID where customerID<3000";
+            $result = mysqli_query($link, $query);
+        }
+        else{
             $query = "Select customerID from customer join orders on customerID=custID";
             $result = mysqli_query($link, $query);
         }
-        elseif($tableVal == "table[1]"){
-
-        }
-        
         mysqli_close($link);   // disconnecting from MySQL
         
     ?>
