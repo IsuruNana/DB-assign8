@@ -20,15 +20,15 @@
         
         $whereVal = $_POST["where"];
         if ($whereVal == "where[0]"){
-            $query = "Select customerID from customer join orders on customerID=custID where customerID>3000";
+            $query = "Select * from customer join orders on customerID=custID where customerID>3000";
             $result = mysqli_query($link, $query);
         }
         elseif($whereVal == "where[1]"){
-            $query = "Select customerID from customer join orders on customerID=custID where customerID<3000";
+            $query = "Select * from customer join orders on customerID=custID where customerID<3000";
             $result = mysqli_query($link, $query);
         }
         else{
-            $query = "Select customerID from customer join orders on customerID=custID";
+            $query = "Select * from customer join orders on customerID=custID";
             $result = mysqli_query($link, $query);
         }
 
