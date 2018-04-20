@@ -27,7 +27,6 @@
         elseif($tableVal == "table[1]"){
 
         }
-
         
         mysqli_close($link);   // disconnecting from MySQL
         
