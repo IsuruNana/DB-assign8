@@ -42,33 +42,46 @@
         <h1 class="lead text-center mt-4 display-4">Show Tables</h1>
         <hr>
         <p class="text-center">Click to see the respective table</p>
-        <!--<div class="d-flex justify-content-center">
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-success">Customers</button>
-                <button type="button" class="btn btn-danger">Items</button>
-                <button type="button" class="btn btn-warning">Suppliers</button>
-                <button type="button" class="btn btn-primary">Orders</button>
-                <button type="button" class="btn btn-warning">Credit Cards</button>
-                <button type="button" class="btn btn-danger">Supplies</button>
-                <button type="button" class="btn btn-success">Shipping</button>
-            </div>
-        </div>-->
-
         <div class="d-flex justify-content-center">
             <form action="index.php" method="post">
                 <div class="form-check form-check-inline">
                     <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="selectTable" id="inlineRadio1" value="customer"> Customers
                     </label>
-                    </div>
-                    <div class="form-check form-check-inline">
+                </div>
+                <div class="form-check form-check-inline">
                     <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="selectTable" id="inlineRadio2" value="item"> Items
                     </label>
-                    </div>
-                    <div class="form-check form-check-inline disabled">
+                </div>
+                <div class="form-check form-check-inline">
                     <label class="form-check-label">
                         <input class="form-check-input" type="radio" name="selectTable" id="inlineRadio3" value="order">Orders
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="selectTable" id="inlineRadio4" value="supplies">Supplies
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="selectTable" id="inlineRadio5" value="creditcard">Credit Card
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="selectTable" id="inlineRadio6" value="billing">Billing
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="selectTable" id="inlineRadio7" value="shipping">Shipping
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="selectTable" id="inlineRadio8" value="supplier"> Suppliers
                     </label>
                 </div>
                 <input class= "btn btn-success ml-3" type="submit" name="submit" value="Get Table" />

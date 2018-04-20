@@ -30,28 +30,6 @@
         }
 
         else {
-            // echo '<div class="container mt-5">';
-            //     echo "<h1>Showing {$radioVal} table</h1>";
-            //     while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
-            //         //Print table heads
-            //             echo '<table class="table">';
-            //                 echo "<tr>";//table row
-            //                     for($i = 0; $i < sizeof($row); $i++){
-            //                         $finfo = mysqli_fetch_field_direct($result, $i);
-            //                         echo "<th>" . $finfo->name . "</th>";//table header
-            //                     }
-            //                 echo "</tr>";//table row
-                            
-            //                 //Print rows
-            //                 echo "<tr>";//table row
-            //                     for($i = 0; $i < sizeof($row); $i++){
-            //                         echo "<td>" . $row[$i] . "</td>";//table data
-            //                     }
-            //                 echo "</tr>";//table row
-            //             echo '</table>';
-            //     }
-            // echo '</div>';
-
             echo '<div class="container mt-5">';
                 echo "<h1>Showing {$radioVal} table</h1>";
                 $row = mysqli_fetch_array($result, MYSQLI_NUM);
