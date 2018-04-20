@@ -34,7 +34,7 @@
 
         $select = "select * from item where itemID {$sign} {$textVal}";
         //$select = "select * from item";
-        echo $select;
+        //echo $select;
 
         // echo $radioVal;
         // echo $textVal;
@@ -51,7 +51,7 @@
                 echo '<table class="table">';
                     echo '<thead class="thead-dark">';
                         echo '<tr>';//table row
-                            for($i = 0; $i < sizeof($row); $i++){
+                            for($i = 0; $row != null && $i < sizeof($row); $i++){
                                 $finfo = mysqli_fetch_field_direct($result, $i);
                                 echo '<th scope="col">' . $finfo->name . '</th>';//table header
                             }
@@ -59,7 +59,7 @@
                     //Print row
                     //---------------------------------------------------//
                     echo "<tr>";//table row
-                    for($i = 0; $i < sizeof($row); $i++){
+                    for($i = 0; $row != null && $i < sizeof($row); $i++){
                         echo "<td>" . $row[$i] . "</td>";//table data
                     }
                     echo "</tr>";//table row
@@ -67,13 +67,16 @@
                     while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
                         //Print rows
                         echo "<tr>";//table row
-                            for($i = 0; $i < sizeof($row); $i++){
+                            for($i = 0; $row != null && $i < sizeof($row); $i++){
                                 echo "<td>" . $row[$i] . "</td>";//table data
                             }
                         echo "</tr>";//table row
                 
                     }
                 echo '</table>';
+                // if($row == null) {
+                //     echo '<p class="display-4">Table is Empty</p>';
+                // }
             echo '</div>';
         }
         
