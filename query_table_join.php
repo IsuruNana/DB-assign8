@@ -31,6 +31,43 @@
             $query = "Select customerID from customer join orders on customerID=custID";
             $result = mysqli_query($link, $query);
         }
+
+        if (!$result) {
+            die('SQL error: ' . mysqli_error($link));
+        }
+
+        else {
+            echo '<div class="container mt-5">';
+                $row = mysqli_fetch_array($result, MYSQLI_NUM);
+                echo '<table class="table">';
+                    echo '<thead class="thead-dark">';
+                        echo '<tr>';//table row
+                            for($i = 0; $i < sizeof($row); $i++){
+                                $finfo = mysqli_fetch_field_direct($result, $i);
+                                echo '<th scope="col">' . $finfo->name . '</th>';//table header
+                            }
+                    echo '</thead>';
+                    //Print row
+                    //---------------------------------------------------//
+                    echo "<tr>";//table row
+                    for($i = 0; $i < sizeof($row); $i++){
+                        echo "<td>" . $row[$i] . "</td>";//table data
+                    }
+                    echo "</tr>";//table row
+                    //---------------------------------------------------//
+                    while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+                        //Print rows
+                        echo "<tr>";//table row
+                            for($i = 0; $i < sizeof($row); $i++){
+                                echo "<td>" . $row[$i] . "</td>";//table data
+                            }
+                        echo "</tr>";//table row
+                
+                    }
+                echo '</table>';
+            echo '</div>';
+        }
+        
         mysqli_close($link);   // disconnecting from MySQL
         
     ?>
