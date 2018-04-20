@@ -19,11 +19,11 @@
 
         
         $whereVal = $_POST["where"];
-        if ($whereVal == "where[0]"){
+        if ($whereVal == "greaterID"){
             $query = "Select * from customer join orders on customerID=custID where customerID > 3000";
             $result = mysqli_query($link, $query);
         }
-        elseif($whereVal == "where[1]"){
+        elseif($whereVal == "lessID"){
             $query = "Select * from customer join orders on customerID=custID where customerID < 3000";
             $result = mysqli_query($link, $query);
         }
