@@ -19,13 +19,11 @@
 
         
         $whereVal = $_POST["where"];
-        echo $tableVal;
-        echo $whereVal;
-        if ($tableVal == "where[0]"){
+        if ($whereVal == "where[0]"){
             $query = "Select customerID from customer join orders on customerID=custID where customerID>3000";
             $result = mysqli_query($link, $query);
         }
-        elseif($tableVal == "where[1]"){
+        elseif($whereVal == "where[1]"){
             $query = "Select customerID from customer join orders on customerID=custID where customerID<3000";
             $result = mysqli_query($link, $query);
         }
