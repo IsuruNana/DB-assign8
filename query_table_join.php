@@ -19,7 +19,8 @@
 
         $tableVal = $_POST["table"];
         $whereVal = $_POST["where"];
-
+        echo $tableVal;
+        echo $whereVal;
         if ($tableVal == "table[0]"){
             $query = "Select customerID from customer join orders on customerID=custID";
             $result = mysqli_query($link, $query);
