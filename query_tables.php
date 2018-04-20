@@ -21,7 +21,7 @@
         $whereVal = $_POST["where"];
 
         if ($tableVal == "table[0"){
-            $query = "Select customerID from customer join order on customerID=custID";
+            $query = "Select customerID from customer join orders on customerID=custID";
             $result = mysqli_query($link, $query);
         }
         elseif($tableVal == "table[1]"){
